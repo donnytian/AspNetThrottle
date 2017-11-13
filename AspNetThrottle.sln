@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetThrottle", "AspNetThrottle\AspNetThrottle.csproj", "{15A70EC1-4DA2-4776-9849-A2F1358C8541}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2D0BBC4-E0B9-479C-BCEC-CBBA42E4F275}
+	EndGlobalSection
+EndGlobal
