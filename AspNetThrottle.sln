@@ -1,9 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetThrottle", "AspNetThrottle\AspNetThrottle.csproj", "{15A70EC1-4DA2-4776-9849-A2F1358C8541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetThrottle", "AspNetThrottle\AspNetThrottle.csproj", "{15A70EC1-4DA2-4776-9849-A2F1358C8541}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B454B5AC-80AA-4AC6-95CE-72E8B7936B37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetThrottle.Tests", "AspNetThrottle.Tests\AspNetThrottle.Tests.csproj", "{1D422E4C-3649-4B73-901C-67F96D202156}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B73183D6-48AD-478B-A7AC-E0F97CB21079}"
+	ProjectSection(SolutionItems) = preProject
+		GlobalSuppressions.cs = GlobalSuppressions.cs
+		requirements.txt = requirements.txt
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetThrottle.NetCore", "AspNetThrottle.NetCore\AspNetThrottle.NetCore.csproj", "{73F9B5F4-DEBE-4C1E-BA27-8E8EB4CDE54E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +28,20 @@ Global
 		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15A70EC1-4DA2-4776-9849-A2F1358C8541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D422E4C-3649-4B73-901C-67F96D202156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D422E4C-3649-4B73-901C-67F96D202156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D422E4C-3649-4B73-901C-67F96D202156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D422E4C-3649-4B73-901C-67F96D202156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F9B5F4-DEBE-4C1E-BA27-8E8EB4CDE54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F9B5F4-DEBE-4C1E-BA27-8E8EB4CDE54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F9B5F4-DEBE-4C1E-BA27-8E8EB4CDE54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F9B5F4-DEBE-4C1E-BA27-8E8EB4CDE54E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D422E4C-3649-4B73-901C-67F96D202156} = {B454B5AC-80AA-4AC6-95CE-72E8B7936B37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2D0BBC4-E0B9-479C-BCEC-CBBA42E4F275}

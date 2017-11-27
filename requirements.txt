@@ -1,0 +1,7 @@
+
+1. request throttle by client ID
+2. request throttle by client IP
+3. support whitelist for endpoint, ID and IP
+4. support blacklist for endpoint, ID and IP
+5. use general rules by default
+6. if there are any client policies (rule for certain clients) matched, ignore all general rules

@@ -9,6 +9,11 @@ namespace AspNetThrottle
     public class ThrottleOptions
     {
         /// <summary>
+        /// Gets or sets the throttle name, used to compose the throttle cache keys.
+        /// </summary>
+        public string ThrottleName { get; set; }
+
+        /// <summary>
         /// Gets or sets general rules for all clients.
         /// </summary>
         public List<ThrottleRule> GeneralRules { get; set; }
@@ -24,12 +29,12 @@ namespace AspNetThrottle
         public List<string> EndpointWhitelist { get; set; }
 
         /// <summary>
-        /// Gets or sets the client white list.
+        /// Gets or sets the client whitelist.
         /// </summary>
-        public List<string> ClientWhitelist { get; set; }
+        public List<string> ClientIdWhitelist { get; set; }
 
         /// <summary>
-        /// Gets or sets the HTTP Status code returned when rate limiting occurs, by default value is set to 429 (Too Many Requests).
+        /// Gets or sets the HTTP Status code returned when quota exceeded, by default value is set to 429 (Too Many Requests).
         /// </summary>
         public int HttpStatusCode { get; set; } = 429;
 
@@ -39,10 +44,5 @@ namespace AspNetThrottle
         /// Resource calls quota exceeded! maximum admitted {0} per {1}
         /// </summary>
         public string QuotaExceededMessage { get; set; }
-
-        /// <summary>
-        /// Gets or sets the prefix, used to compose the throttle cache keys.
-        /// </summary>
-        public string StorageKeyPrefix { get; set; } = "antskp_";
     }
 }
