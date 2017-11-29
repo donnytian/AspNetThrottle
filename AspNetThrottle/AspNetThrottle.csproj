@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.1</Version>
+    <Version>0.0.4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Donny Tian</Authors>
     <Company />
     <Product />
+    <PackageProjectUrl>https://github.com/donnytian/AspNetThrottle</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Extensions.String" Version="0.0.4" />
+    <PackageReference Include="Extensions.String" Version="0.0.5" />
     <PackageReference Include="IpSet" Version="0.0.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
   </ItemGroup>

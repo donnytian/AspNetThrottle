@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AspNetThrottle
 {
     /// <summary>
-    /// Configuration options for throttle.
+    /// Basic configuration options for throttle.
     /// </summary>
-    public class ThrottleOptions
+    public class BasicOptions
     {
         /// <summary>
         /// Gets or sets the throttle name, used to compose the throttle cache keys.
@@ -31,7 +30,7 @@ namespace AspNetThrottle
         /// <summary>
         /// Gets or sets the client whitelist.
         /// </summary>
-        public List<string> ClientIdWhitelist { get; set; }
+        public List<string> ClientWhitelist { get; set; }
 
         /// <summary>
         /// Gets or sets the HTTP Status code returned when quota exceeded, by default value is set to 429 (Too Many Requests).
@@ -44,5 +43,10 @@ namespace AspNetThrottle
         /// Resource calls quota exceeded! maximum admitted {0} per {1}
         /// </summary>
         public string QuotaExceededMessage { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether ignore case when matching client ID.
+        /// </summary>
+        public bool IdIgnoreCase { get; set; } = true;
     }
 }

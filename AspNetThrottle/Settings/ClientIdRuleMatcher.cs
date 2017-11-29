@@ -12,22 +12,30 @@ namespace AspNetThrottle
     {
         private readonly IEnumerable<string> _whitelist;
         private readonly IEnumerable<ClientPolicy> _clientPolicies;
+        private readonly StringComparison _compareType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClientIdRuleMatcher"/> class.
         /// </summary>
         /// <param name="idWhiltlist">Whitlist of client IDs.</param>
         /// <param name="clientPolicies">Client policies.</param>
-        public ClientIdRuleMatcher(IEnumerable<string> idWhiltlist, IEnumerable<ClientPolicy> clientPolicies)
+        /// <param name="idIgnoreCase">Whether to ignore case when comparing ID.</param>
+        public ClientIdRuleMatcher(IEnumerable<string> idWhiltlist, IEnumerable<ClientPolicy> clientPolicies, bool idIgnoreCase)
         {
-            _whitelist = idWhiltlist ?? throw new ArgumentNullException(nameof(idWhiltlist));
-            _clientPolicies = clientPolicies ?? throw new ArgumentNullException(nameof(clientPolicies));
+            _whitelist = idWhiltlist;
+            _clientPolicies = clientPolicies;
+            _compareType = idIgnoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
         }
 
         /// <inheritdoc />
         public bool IsWhitelisted(string clientId)
         {
-            return _whitelist.Contains(clientId);
+            if (_whitelist == null || clientId.IsNullOrEmpty())
+            {
+                return false;
+            }
+
+            return _whitelist.Contains(clientId, _compareType);
         }
 
         /// <inheritdoc />
@@ -40,7 +48,7 @@ namespace AspNetThrottle
                 return list.ToArray();
             }
 
-            var rules = _clientPolicies.FirstOrDefault(p => p.ClientId == clientId)?.Rules;
+            var rules = _clientPolicies?.FirstOrDefault(p => clientId.Equals(p.ClientId, _compareType))?.Rules;
 
             if (rules != null)
             {

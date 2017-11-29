@@ -20,7 +20,7 @@ namespace AspNetThrottle
         /// <param name="options">The option object.</param>
         /// <param name="counterStore">The store for throttle data.</param>
         /// <param name="ruleMatcher">The matcher to get matching rules for specific client.</param>
-        public ThrottleProcessor(ThrottleOptions options, ICounterStore counterStore, IClientRuleMatcher ruleMatcher)
+        public ThrottleProcessor(BasicOptions options, ICounterStore counterStore, IClientRuleMatcher ruleMatcher)
         {
             Options = options ?? throw new ArgumentNullException(nameof(options));
             _counterStore = counterStore ?? throw new ArgumentNullException(nameof(counterStore));
@@ -30,7 +30,7 @@ namespace AspNetThrottle
         /// <summary>
         /// Gets throttle options.
         /// </summary>
-        public ThrottleOptions Options { get; }
+        public BasicOptions Options { get; }
 
         /// <summary>
         /// Gets a <see cref="RequestCounter"/> that counted the current request according the specified rule.

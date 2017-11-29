@@ -13,12 +13,12 @@ namespace AspNetThrottle.Tests
         public static ThrottleProcessor GetProcessorWithWhitelist(string whitelistedClientId, string whitelistedEndpoint)
         {
             var store = new FakeCounterStore();
-            var options = new ThrottleOptions
+            var options = new BasicOptions
             {
-                ClientIdWhitelist = new List<string> { whitelistedClientId },
+                ClientWhitelist = new List<string> { whitelistedClientId },
                 EndpointWhitelist = new List<string> { whitelistedEndpoint }
             };
-            var matcher = new ClientIdRuleMatcher(options.ClientIdWhitelist, options.ClientPolicies);
+            var matcher = new ClientIdRuleMatcher(options.ClientWhitelist, options.ClientPolicies, options.IdIgnoreCase);
             var processor = new ThrottleProcessor(options, store, matcher);
 
             return processor;
@@ -29,7 +29,7 @@ namespace AspNetThrottle.Tests
         {
             // Arrange
             var clientId = "clientA";
-            var request = new ClientRequest { ClientId = clientId };
+            var request = new ClientRequest { ClientId = "ClientA" }; // Different case on purpose.
             var processor = GetProcessorWithWhitelist(clientId, null);
 
             // Act
