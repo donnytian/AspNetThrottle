@@ -11,7 +11,7 @@ namespace AspNetThrottle.NetCore
         public IdThrottleMiddleware(RequestDelegate next, ThrottleOptions options, ICounterStore counterStore, ILogger<IdThrottleMiddleware> logger)
             : base(next, options, counterStore, logger)
         {
-            var matcher = new ClientIdRuleMatcher(Options.ClientWhitelist, Options.ClientPolicies);
+            var matcher = new ClientIdRuleMatcher(Options.ClientWhitelist, Options.ClientPolicies, Options.IdIgnoreCase);
             Processor = new ThrottleProcessor(Options, counterStore, matcher);
         }
 

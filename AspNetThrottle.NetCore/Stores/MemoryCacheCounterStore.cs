@@ -52,9 +52,15 @@ namespace AspNetThrottle.NetCore
         }
 
         /// <inheritdoc />
-        public void Set(string id, RequestCounter value, TimeSpan expirationTime)
+        public void Set(string id, RequestCounter value, TimeSpan relative)
         {
-            _cache.Set(id, value, new MemoryCacheEntryOptions().SetAbsoluteExpiration(expirationTime));
+            _cache.Set(id, value, new MemoryCacheEntryOptions().SetAbsoluteExpiration(relative));
+        }
+
+        /// <inheritdoc />
+        public void Set(string id, RequestCounter value, DateTimeOffset absolute)
+        {
+            _cache.Set(id, value, new MemoryCacheEntryOptions().SetAbsoluteExpiration(absolute));
         }
     }
 }

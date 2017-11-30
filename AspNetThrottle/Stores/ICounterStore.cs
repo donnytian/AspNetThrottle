@@ -37,11 +37,19 @@ namespace AspNetThrottle
         void Remove(string id);
 
         /// <summary>
-        /// Sets entry in store.
+        /// Sets entry in store with relative expiration to now.
         /// </summary>
         /// <param name="id">The ID string.</param>
         /// <param name="value">The data to be set.</param>
-        /// <param name="expirationTime">Expiration time.</param>
-        void Set(string id, RequestCounter value, TimeSpan expirationTime);
+        /// <param name="relative">Relative expiration time to now.</param>
+        void Set(string id, RequestCounter value, TimeSpan relative);
+
+        /// <summary>
+        /// Sets entry in store with absolute expiration.
+        /// </summary>
+        /// <param name="id">The ID string.</param>
+        /// <param name="value">The data to be set.</param>
+        /// <param name="absolute">Absolute expiration time in UTC.</param>
+        void Set(string id, RequestCounter value, DateTimeOffset absolute);
     }
 }

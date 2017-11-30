@@ -67,5 +67,11 @@ namespace AspNetThrottle.NetCore
         {
             _cache.SetString(id, JsonConvert.SerializeObject(value), new DistributedCacheEntryOptions().SetAbsoluteExpiration(expirationTime));
         }
+
+        /// <inheritdoc />
+        public void Set(string id, RequestCounter value, DateTimeOffset absolute)
+        {
+            _cache.SetString(id, JsonConvert.SerializeObject(value), new DistributedCacheEntryOptions().SetAbsoluteExpiration(absolute));
+        }
     }
 }

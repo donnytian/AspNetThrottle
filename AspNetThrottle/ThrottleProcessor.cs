@@ -62,7 +62,8 @@ namespace AspNetThrottle
             {
                 counter.LimitExceeded = true;
 
-                if (rule.CooldownTimespan.HasValue)
+                if (rule.CooldownTimespan.HasValue
+                    && DateTime.UtcNow + rule.CooldownTimespan.Value > counter.Timestamp + rule.PeriodTimespan.Value)
                 {
                     _counterStore.Set(key, counter, rule.CooldownTimespan.Value);
                 }
