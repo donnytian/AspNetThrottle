@@ -50,5 +50,10 @@ namespace AspNetThrottle.Tests.Fakes
         {
             _store[id] = value;
         }
+
+        public void Set(string id, RequestCounter value, DateTimeOffset absolute)
+        {
+            _store[id] = value;
+        }
     }
 }

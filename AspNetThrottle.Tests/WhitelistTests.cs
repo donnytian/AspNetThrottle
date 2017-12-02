@@ -45,7 +45,7 @@ namespace AspNetThrottle.Tests
             // Arrange
             var clientId = "clientA";
             var request = new ClientRequest { ClientId = clientId };
-            var processor = GetProcessorWithWhitelist("dummyId", null);
+            var processor = GetProcessorWithWhitelist("dummyId", "dummyPath");
 
             // Act
             var whitelisted = processor.IsWhitelisted(request);
